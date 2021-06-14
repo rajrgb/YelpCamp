@@ -153,6 +153,7 @@ app.use((err, req, res, next) => {
     let title = "Error";
     res.status(statusCode).render('error', { title, err });
 })
-app.listen(3000, () => {
-    console.log("Server started at port no. 3000");
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+    console.log(`Serving on port no. ${port}`);
 })
